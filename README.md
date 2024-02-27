@@ -23,3 +23,4 @@ Suppose we have a binary tree representing a family tree. We can use the basic f
 4. Delete nodes to update the family tree in case of marriages, divorces, or other changes.
 
 ## Code style
+All the code in this repo follows the betty coding style
