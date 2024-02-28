@@ -24,3 +24,6 @@ Suppose we have a binary tree representing a family tree. We can use the basic f
 
 ## Code style
 All the code in this repo follows the betty coding style
+
+## more on binary tree
+
