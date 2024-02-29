@@ -21,3 +21,10 @@ Suppose we have a binary tree representing a family tree. We can use the basic f
 2. Insert nodes to represent parent-child relationships.
 3. Traverse the tree to display the family tree in different orders (e.g., in-order for alphabetical ordering of names).
 4. Delete nodes to update the family tree in case of marriages, divorces, or other changes.
+
+## Code style
+All the code in this repo follows the betty coding style
+
+## more on C binary tree
+Complilation is done with the GCC complier 
+
