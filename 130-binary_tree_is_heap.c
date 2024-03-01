@@ -1,20 +1,23 @@
 #include "binary_trees.h"
 
 /**
- * is_heap_util - Helper function to recursively check if a binary tree is a valid Max Binary Heap
+ * is_heap_util - Helper function to check if a binary tree is a valid Heap
  * @tree: The binary tree to check
  * @val: The value to compare with node values
  * Return: 1 if the tree is a valid Max Binary Heap, 0 otherwise
  */
 int is_heap_util(const binary_tree_t *tree, int val)
 {
-    if (tree == NULL)
-        return (1);
+	if (tree == NULL)
+		return (1);
 
-    if (tree->n > val)
-        return (0);
+	int left_result = is_heap_util(tree->left, tree->n);
+	int right_result = is_heap_util(tree->right, tree->n);
 
-    return (is_heap_util(tree->left, tree->n) && is_heap_util(tree->right, tree->n));
+	if (tree->n > val && left_result && right_result)
+		return (1);
+	else
+		return (0);
 }
 
 /**
@@ -24,9 +27,15 @@ int is_heap_util(const binary_tree_t *tree, int val)
  */
 int binary_tree_is_heap(const binary_tree_t *tree)
 {
-    if (tree == NULL)
-        return (0);
+	if (tree == NULL)
+		return (0);
 
-    return (is_heap_util(tree, tree->n) && binary_tree_is_complete(tree));
+	int heap_result = is_heap_util(tree, tree->n);
+	int complete_result = binary_tree_is_complete(tree);
+
+	if (heap_result && complete_result)
+		return (1);
+	else
+		return (0);
 }
 
